@@ -1,0 +1,62 @@
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+#foto_alta {
+    background-color: aqua;
+    height: 27%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#foto_alta img {
+    width: 100%;
+    height: 100%;
+}
+
+#contenitore_temp {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.temp {
+    height: 40%;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+
+.foto_fahrenheit_kelvin {
+    width: 30%;
+}
+
+.foto_fahrenheit_kelvin img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.temp_fahrenheit_kelvin {
+    font-size: 50px;
+}
+
+#errore {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    height: 30%;
+}
+
+#errore first:child {
+    color: black;
+    font-size: 80px;
+}
+

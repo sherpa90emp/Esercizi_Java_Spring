@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"> <!--importo gli atttributi th dal rispettivo sito-->
+<head>
+    <meta charset="UTF-8">
+    <title>Benvenuto</title>
+    <style>
+        body { text-align: center; margin: 64px; }
+        h1 { color: red; }
+        ul { text-align: left; }
+    </style>
+</head>
+<body>
+<!--l'attributo th:text sostituisce il contenuto nel tag; l'espressione ${username} accede all'attributo "username" del model che abbiamo passato dal controller-->
+<h1 th:text="'Ciao, ' + ${username} + '!'">Ciao Utente!</h1>
+
+<!--l'attributo th:each itera sugli elementi della collezione (in questo caso la lista di attività) e per ogni elemento della lista crea un nuovo tag (in questo caso li) -->
+<ul>
+    <li th:each="a : ${attivita}" th:text="${a}">Attività placeholder</li>
+</ul>
+<p th:if="${username.length > 10}">L'username è stato inserito</p>
+<p th:text="${username.length > 10} ? 'Maggiore di 10' : 'Minore o uguale a 10'"></p>
+</body>
+</html>
