@@ -15,4 +15,13 @@ public class ControllerTemp {
         }
         return "index";
     }
+
+    @GetMapping("/string")
+    public String homeString(Model model, @RequestParam(defaultValue = "0") String temp) {
+        if (temp != null) {
+            Double tempParse = Double.parseDouble(temp);
+            model.addAttribute("temp", tempParse);
+        }
+        return "index";
+    }
 }
