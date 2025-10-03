@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temperatura</title>
+  <link rel="stylesheet" th:href="@{/css/temp.css}">
+</head>
+<body>
+<div id="foto_alta">
+  <img src="https://previews.123rf.com/images/chris77ho/chris77ho2006/chris77ho200600051/150144829-outdoor-weather-thermometer-icon-set-different-temperatures-from-freezing-cold-to-hot-vector.jpg" alt="sfondo">
+</div>
+<div id="contenitore_temp">
+  <div class="temp">
+    <div class="foto_fahrenheit_kelvin">
+      <img src="https://cdn-icons-png.flaticon.com/256/3893/3893461.png" alt="temp_fahrenheit">
+    </div>
+    <div class="temp_fahrenheit_kelvin">
+      <span th:text="${fahrenheit}"></span>
+    </div>
+  </div>
+  <div class="temp">
+    <div class="foto_fahrenheit_kelvin">
+      <img src="https://cdn-icons-png.flaticon.com/512/3815/3815451.png" alt="temp_kelvin">
+    </div>
+    <div class="temp_fahrenheit_kelvin">
+      <span th:text="${kelvin}"></span>
+    </div>
+    <div id="errore" th:if="${errore}">
+      <span th:text="${errore}"></span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

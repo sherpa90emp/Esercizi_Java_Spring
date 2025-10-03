@@ -24,4 +24,21 @@ public class ControllerTemp {
         }
         return "index";
     }
+
+    @GetMapping("/index2")
+    public String homeCalc(Model model, @RequestParam(defaultValue = "0") String temp) {
+        try {
+            if (temp != null) {
+                Double tempParse = Double.parseDouble(temp);
+                Double f = (tempParse * 9/5) + 32;
+                Double k = tempParse + 273.15;
+                model.addAttribute("fahrenheit", f);
+                model.addAttribute("kelvin", k);
+            }
+        } catch (NumberFormatException ne) {
+            model.addAttribute("errore", "Errore devi inserire un numero");
+        }
+        return "index2";
+    }
+
 }
