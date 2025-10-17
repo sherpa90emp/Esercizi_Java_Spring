@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 public class ProjectConfig {
     @Bean
     public DataSource dataSource() {
-        //fornendo un bean di tipo datasource al context di spring, siamo sovrascrivendo il comportamento di default con uno personalizzato
+        //fornendo un bean di tipo datasource al context di spring, stiamo sovrascrivendo il comportamento di default con uno personalizzato
 
         //dataSource che effettua pool connessioni
         HikariDataSource dataSource = new HikariDataSource();

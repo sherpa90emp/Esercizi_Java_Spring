@@ -19,7 +19,7 @@ public class JdbcTutorialRepository implements TutorialRepository{
 
     @Override
     public int save(Tutorial tutorial) {
-        String sql = "INSERT INTO tutorials (title, category, description, published VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO tutorials (title, category, description, published) VALUES (?, ?, ?, ?)";
         return jdbc.update(sql,
                 tutorial.getTitle(),
                 tutorial.getCategory(),
