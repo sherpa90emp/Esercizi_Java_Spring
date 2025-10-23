@@ -1,5 +1,6 @@
 package com.example.demo_spring_relazioni_db.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -18,7 +19,9 @@ public class UserDetails {
 
     @OneToOne
     @JoinColumn(name = "user_id")
-    @JsonIgnore //serve per evitare che alla prima get vada in loop ma non stamperà mai l'id dell'user
+    //@JsonIgnore
+    // serve per evitare che alla prima get vada in loop ma non stamperà mai l'id dell'user
+    @JsonBackReference("user-userdetails") //si utilizza lo stesso nome in user (il nome è arbitrario); con back farà vedere l'utente
     private User user;
 
     public Long getId() {

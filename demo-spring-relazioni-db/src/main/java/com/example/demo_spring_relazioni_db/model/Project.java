@@ -1,5 +1,6 @@
 package com.example.demo_spring_relazioni_db.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -13,6 +14,7 @@ public class Project {
     private String name;
 
     @ManyToMany(mappedBy = "projects")
+    @JsonBackReference("user-projects")
     private List<User> users;
 
     public Long getId() {

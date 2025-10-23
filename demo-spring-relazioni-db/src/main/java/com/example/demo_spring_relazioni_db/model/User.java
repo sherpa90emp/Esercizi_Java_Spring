@@ -1,5 +1,6 @@
 package com.example.demo_spring_relazioni_db.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -16,9 +17,11 @@ public class User {
     private String email;
 
     @OneToOne(mappedBy = "user")
+    @JsonManagedReference("user-userdetails") //da questo lato della relazione vedo l'informazione (vedrò user details ecc)
     private UserDetails userDetails;
 
     @OneToMany(mappedBy = "user")
+    @JsonManagedReference("user-posts")
     private List<Post> posts;
 
     @ManyToMany
@@ -27,6 +30,7 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "project_id")
     )
+    @JsonManagedReference("user-projects")
     private List<Project> projects;
 
     public long getId() {

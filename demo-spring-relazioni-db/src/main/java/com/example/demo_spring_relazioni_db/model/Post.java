@@ -1,5 +1,6 @@
 package com.example.demo_spring_relazioni_db.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,6 +18,7 @@ public class Post {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference("user-posts")
     private User user;
 
     public long getId() {
